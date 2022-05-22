@@ -47,7 +47,7 @@ std::string extractData(const std::string str, std::string type)
         vec.push_back(temp_vec); 
         temp_vec.clear();
         temp_vec.push_back("*********Andersen Pointer Analysis Stats***************");
-        for (int k = (sizeof(searches)/sizeof(*searches)) - 4; k < (sizeof(searches)/sizeof(*searches); k++)
+        for (int k = (sizeof(searches)/sizeof(*searches)) - 4; k < (sizeof(searches)/sizeof(*searches)); k++)
         {
             temp_vec.push_back(searches[k]);
         }
