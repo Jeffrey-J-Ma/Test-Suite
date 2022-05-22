@@ -46,7 +46,7 @@ std::string extractData(const std::string str, std::string type)
         }   
         vec.push_back(temp_vec); 
         temp_vec.clear();
-        temp_vec.push_back("****Flow-Sensitive Pointer Analysis Statistics****"); 
+        temp_vec.push_back("*********Andersen Pointer Analysis Stats***************"); 
         temp_vec.push_back(searches[7]);
         vec.push_back(temp_vec); 
     } 
