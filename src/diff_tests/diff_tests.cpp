@@ -30,17 +30,25 @@ std::string extractData(const std::string str, std::string type)
 {
     std::stringstream output;
     bool found = false;
-    std::string searches[] = {"TotalNode","TotalEdge","AvgIndOutDeg", "AvgIndInDeg", "AvgOutDegree", "AvgInDegree", "AvgWeight", "AvgTopLvlPtsSize"};
-    std::vector< std::vector<std::string> > vec;
+    std::vector<std::string> searches;
+    std::vector<std::vector<std::string> > vec;
     std::vector<std::string> temp_vec;
     std::vector<std::string> data;
     std::stringstream iss(str);
     std::string line;
     int i = 0; 
+    searches.push_back("TotalNode");
+    searches.push_back("TotalEdge");
+    searches.push_back("AvgIndOutDeg");
+    searches.push_back("AvgIndInDeg");
+    searches.push_back("AvgOutDegree);
+    searches.push_back("AvgInDegree");
+    searches.push_back("AvgWeight");
+    searches.push_back("AvgTopLvlPtsSize");
     if(type == "read_write_svfg")
     {
         temp_vec.push_back("****SVFG Statistics****"); 
-        for (int x = 0; x < (sizeof(searches)/sizeof(searches[0])) - 1; x++)
+        for (int x = 0; x < (searches.size() - 1); x++)
         {
             temp_vec.push_back(searches[x]); 
         }   
@@ -58,7 +66,7 @@ std::string extractData(const std::string str, std::string type)
     }
 
         std::string marker = vec[0][0];
-        // extract data from command output into a map
+        // extract data from command output
         while(getline(iss, line)) 
         {
             if (line.find("#######################################################") != std::string::npos && found){
@@ -67,7 +75,7 @@ std::string extractData(const std::string str, std::string type)
                  marker = (i < vec.size()) ? vec[i][0] : "";
                  if(marker == "") break; 
             }
-            if (data.size() >= (sizeof(searches)/sizeof(searches[0])))
+            if (data.size() >= searches.size())
                 break;
             if (line.find(marker) != std::string::npos){
                 found = true;
