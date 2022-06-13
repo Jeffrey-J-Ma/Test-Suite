@@ -54,11 +54,14 @@ std::string extractData(const std::string str, std::string type)
         temp_vec.push_back("****Persistent Points-To Cache Statistics: bv-finalize****");
         vec.push_back(temp_vec);
         temp_vec.clear();
-        temp_vec.push_back("****SVFG Statistics****"); 
-        for (int x = 0; x < (searches.size() - 1); x++)
-        {
-            temp_vec.push_back(searches[x]); 
-        }   
+        temp_vec.push_back("****SVFG Statistics****");
+        temp_vec.push_back("TotalNode");
+        temp_vec.push_back("TotalEdge");
+        temp_vec.push_back("AvgIndOutDeg");
+        temp_vec.push_back("AvgIndInDeg");
+        temp_vec.push_back("AvgOutDegree");
+        temp_vec.push_back("AvgInDegree");
+        temp_vec.push_back("AvgWeight");
         vec.push_back(temp_vec);
     } 
     else 
