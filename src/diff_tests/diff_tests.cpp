@@ -47,16 +47,19 @@ std::string extractData(const std::string str, std::string type)
     searches.push_back("AvgTopLvlPtsSize");
     if(type == "read_write_svfg")
     {
+        temp_vec.push_back("*********Andersen Pointer Analysis Stats***************"); 
+        temp_vec.push_back(searches[7]);
+        vec.push_back(temp_vec);
+        temp_vec.clear();
+        temp_vec.push_back("****Persistent Points-To Cache Statistics: bv-finalize****");
+        vec.push_back(temp_vec);
+        temp_vec.clear();
         temp_vec.push_back("****SVFG Statistics****"); 
         for (int x = 0; x < (searches.size() - 1); x++)
         {
             temp_vec.push_back(searches[x]); 
         }   
-        vec.push_back(temp_vec); 
-        temp_vec.clear();
-        temp_vec.push_back("*********Andersen Pointer Analysis Stats***************"); 
-        temp_vec.push_back(searches[7]);
-        vec.push_back(temp_vec); 
+        vec.push_back(temp_vec);
     } 
     else 
     {   
