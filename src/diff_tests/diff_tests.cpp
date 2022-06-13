@@ -41,7 +41,7 @@ std::string extractData(const std::string str, std::string type)
     searches.push_back("TotalEdge");
     searches.push_back("AvgIndOutDeg");
     searches.push_back("AvgIndInDeg");
-    searches.push_back("AvgOutDegree);
+    searches.push_back("AvgOutDegree");
     searches.push_back("AvgInDegree");
     searches.push_back("AvgWeight");
     searches.push_back("AvgTopLvlPtsSize");
