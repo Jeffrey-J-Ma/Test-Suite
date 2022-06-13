@@ -40,7 +40,7 @@ std::string extractData(const std::string str, std::string type)
     if(type == "read_write_svfg")
     {
         temp_vec.push_back("****SVFG Statistics****"); 
-        for (int x = 0; x < (sizeof(searches)/sizeof(*searches)) - 1; x++)
+        for (int x = 0; x < (sizeof(searches)/sizeof(searches[0])) - 1; x++)
         {
             temp_vec.push_back(searches[x]); 
         }   
@@ -67,7 +67,7 @@ std::string extractData(const std::string str, std::string type)
                  marker = (i < vec.size()) ? vec[i][0] : "";
                  if(marker == "") break; 
             }
-            if (data.size() >= (sizeof(searches)/sizeof(*searches)))
+            if (data.size() >= (sizeof(searches)/sizeof(searches[0])))
                 break;
             if (line.find(marker) != std::string::npos){
                 found = true;
