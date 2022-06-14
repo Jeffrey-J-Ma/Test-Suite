@@ -37,6 +37,7 @@ std::string extractData(const std::string str, std::string type)
     std::stringstream iss(str);
     std::string line;
     int i = 0; 
+
     searches.push_back("TotalNode");
     searches.push_back("TotalEdge");
     searches.push_back("AvgIndOutDeg");
@@ -45,23 +46,18 @@ std::string extractData(const std::string str, std::string type)
     searches.push_back("AvgInDegree");
     searches.push_back("AvgWeight");
     searches.push_back("AvgTopLvlPtsSize");
+    
     if(type == "read_write_svfg")
     {
         temp_vec.push_back("*********Andersen Pointer Analysis Stats***************"); 
         temp_vec.push_back(searches[7]);
         vec.push_back(temp_vec);
         temp_vec.clear();
-        temp_vec.push_back("****Persistent Points-To Cache Statistics: bv-finalize****");
-        vec.push_back(temp_vec);
-        temp_vec.clear();
         temp_vec.push_back("****SVFG Statistics****");
-        temp_vec.push_back("TotalNode");
-        temp_vec.push_back("TotalEdge");
-        temp_vec.push_back("AvgIndOutDeg");
-        temp_vec.push_back("AvgIndInDeg");
-        temp_vec.push_back("AvgOutDegree");
-        temp_vec.push_back("AvgInDegree");
-        temp_vec.push_back("AvgWeight");
+        (int x = 0; x < searches.size() - 1; x++)
+        {
+            temp_vec.push_back(searches[x]);
+        }
         vec.push_back(temp_vec);
     } 
     else 
